@@ -1,0 +1,20 @@
+Revision history for Perl extension HTML::FormFiller.
+
+0.04 Thu Apr  1 17:44:48 BST 2004
+	- added code to ignore input tags of type image
+
+0.03 Wed Mar 17 08:14:51 GMT 2004
+	- updated perldoc and README text to reflect changes made in 0.02
+
+0.02 Wed Mar 17 08:08:19 GMT 2004
+	- updated calling method for fill() to use a hashref of options, rather
+	  than a list, i.e. fill({ option1 => value1, option2 => value2}) instead
+	  of fill(value1, value2)
+	- updated test scripts to reflect new calling method for fill()
+	- replaced individual calls to fill() in test scripts with a function to do
+	  the work
+
+0.01  Thu Mar 11 17:56:04 2004
+	- original version; created by h2xs 1.23 with options
+		-AX -b 5.6.0 --use-new-tests -n HTML::FormFiller
+

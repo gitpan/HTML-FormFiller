@@ -1,0 +1,8 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/HTML-FormFiller-fillfields.t
+t/HTML-FormFiller-nofillfields.t
+lib/HTML/FormFiller.pm
+META.yml                                 Module meta-data (added by MakeMaker)

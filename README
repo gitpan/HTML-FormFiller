@@ -1,0 +1,72 @@
+HTML-FormFiller version 0.04
+=============================
+
+DESCRIPTION
+
+Quite often when working with user input from HTML forms it is useful to be
+able to show the same form again with fields repopulated with the information
+previously provided by the user.
+
+MOTIVATION
+
+Although there's already a module in existance to pre-populate forms when
+running under CGI (HTML::FillInForm) it requires a CGI object to work.
+
+This module implements the same idea but without the dependency on
+CGI/mod_perl. Simply pass in the HTML and the hash of form field data and let
+the module do the rest.
+
+SYNOPSIS
+
+First you need some HTML markup ($html), preferably with form fields in it.
+You also need a hash-reference ($form_field_data) containing form field data in
+a 'fieldname' => 'fieldvalue' format.
+
+Assuming you have form fields called first_name, last_name and email, you
+should then populate your hash as follows:
+
+ $form_field_data = {
+   'first_name' => 'John',
+   'last_name'  => 'Smith',
+   'email'      => 'johnsmith@hotmail.com',
+ }
+
+You would incorporate this into a script similar to the following:
+
+ use HTML::FormFiller;
+
+ # lots of code
+
+ # prefill form fields
+ $filled = HTML::FormFiller->fill($html, $form_field_data);
+
+ # send the output to the browser
+ print "Content-type: text/html\n\n";
+ print $filled;
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+  Test::More
+  HTML::Parser
+  HTML::Entities
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2004 by Chisel Wright
+
+This library is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself, either Perl version 5.8.2 or, at your option,
+any later version of Perl 5 you may have available.
+
+
